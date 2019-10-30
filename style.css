@@ -1,4 +1,5 @@
 body{
+	background-color: #990505;
 	/* set a nice background here. Check out setting a full background image,
 	or a color gradient. In case of gradient be sure to use a nice color using color picker. */ 
 }
@@ -18,12 +19,17 @@ body{
 	border : 2px solid black; 
 	/* shorthand for border : width style color */
 	border-radius: 50%; /* circular container */
-	transition: 0.5s; 
+	/*transition: 0.5s; 
 	/* transition time for hover. Try moving it to inside .face:hover instead of here */
 }
 
 .eye{
 	/* These define the common properties for both eyes. Set their width, height, background-color, border, etc here */
+	width: 20px;
+	height: 20px;
+	background-color: black;
+	border: 4px solid black;
+	border-radius: 50%;
 }
 
 .left{
@@ -31,9 +37,17 @@ body{
 	Remember, by default its position is in the top-left corner of its parent , i.e. face.
 	By setting its position to absolute, we can position it using top and left attributes */
 	position: absolute;
+	top: 25%;
+	left: 25%;
+
 }
 
 .right{
+	position: absolute;;
+	top: 25%;
+	left: 75%;
+	transform: translate(-100%,0%);
+
 	
 }
 
@@ -52,15 +66,23 @@ body{
 .face:hover .eye{
 /* These define the properties of eye when the mouse hovers over face.
 Try changing border-radius here.*/
+height: 0px;
+border-radius: 0%;
+
 }
 
 .face:hover .mouth{
+    border : 5px solid transparent;
+	border-bottom-color : black;
+	border-radius: 0%;
+	
 
 }
 
 .face:hover{
 	/* Face properties when mouse hovers over it */
 	background-color:white;
+	transition: 0.5s;
 	/* Try changing the background to another colour, or changing other properties, like size (using width, height)
 		, shape (using border-radius) etc. */
 }
@@ -69,8 +91,16 @@ Try changing border-radius here.*/
 	/*Note : # is used because exclamation is id, not class */
 	/* Change the exclamation sign's size, font, position. Keep it invisible, and make it visible 
 	only when mouse hovers over face. For this, check out opacity. */
+	position: absolute;
+	top: -35%;
+	left: 70%;
+	font-size: 120px;
+	font-weight: bold;
+	font-family: monospace;
+	color: red;
+	opacity: 0;
 }
 
 .face:hover #exclamation{
-
+	opacity: 1;
 }
